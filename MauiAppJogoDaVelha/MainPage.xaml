@@ -1,44 +1,97 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MauiAppJogoDaVelha.MainPage">
-
-    <ContentPage.Background>
-        <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-            <GradientStop Color="Purple" Offset="0.3" />
-            <GradientStop Color="Red" Offset="1.1" />
-        </LinearGradientBrush>
-    </ContentPage.Background>
+             x:Class="MauiAppJogoDaVelha.MainPage"
+             BackgroundColor="#0B1F3A">
 
     <ContentPage.Resources>
+
+        <!-- Estilo dos botoes do tabuleiro -->
         <Style TargetType="Button">
-            <Setter Property="BackgroundColor" Value="Transparent" />
-            <Setter Property="CornerRadius" Value="15" />
-            <Setter Property="TextColor" Value="White" />
-            <Setter Property="FontSize" Value="80" />
-            <Setter Property="BorderWidth" Value="1" />
-            <Setter Property="BorderColor" Value="White" />
+            <Setter Property="BackgroundColor" Value="#142B49" />
+            <Setter Property="CornerRadius" Value="14" />
+            <Setter Property="TextColor" Value="#D4AF37" />
+            <Setter Property="FontSize" Value="54" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="BorderWidth" Value="2" />
+            <Setter Property="BorderColor" Value="#D4AF37" />
         </Style>
+
+        <!-- Estilo dos textos -->
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="#D4AF37" />
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontAttributes" Value="Bold" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+
     </ContentPage.Resources>
 
-    <Grid RowDefinitions="*, *, *, *" 
-          ColumnDefinitions="*, *, *"
-          ColumnSpacing="10" RowSpacing="10" Margin="10">
-        
-        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" 
-               Text="Jogo da Velha" />
+    <Grid Padding="20"
+          RowDefinitions="Auto,Auto,*"
+          RowSpacing="15">
 
-        <Button x:Name="btn10" Grid.Row="1" Grid.Column="0" Clicked="Button_Clicked" />
-        <Button x:Name="btn11" Grid.Row="1" Grid.Column="1" Clicked="Button_Clicked" />
-        <Button x:Name="btn12" Grid.Row="1" Grid.Column="2" Clicked="Button_Clicked" />
+        <!-- Cabecalho -->
+        <VerticalStackLayout Grid.Row="0"
+                             Spacing="6"
+                             VerticalOptions="Center">
 
-        <Button Grid.Row="2" Grid.Column="0" Clicked="Button_Clicked" />
-        <Button Grid.Row="2" Grid.Column="1" Clicked="Button_Clicked" />
-        <Button Grid.Row="2" Grid.Column="2" Clicked="Button_Clicked" />
+            <Label Text="JOGO DA VELHA"
+                   FontSize="30"
+                   TextColor="#D4AF37"
+                   HorizontalTextAlignment="Center" />
 
-        <Button Grid.Row="3" Grid.Column="0" Clicked="Button_Clicked" />
-        <Button Grid.Row="3" Grid.Column="1" Clicked="Button_Clicked" />
-        <Button Grid.Row="3" Grid.Column="2" Clicked="Button_Clicked" />
+            <Label Text="DESAFIE SEU AMIGO"
+                   FontSize="14"
+                   TextColor="#D4AF37"
+                   HorizontalTextAlignment="Center" />
+
+        </VerticalStackLayout>
+
+        <!-- Tabuleiro 3 por 3 -->
+        <Grid Grid.Row="2"
+              RowDefinitions="*,*,*"
+              ColumnDefinitions="*,*,*"
+              RowSpacing="10"
+              ColumnSpacing="10"
+              MaximumWidthRequest="420"
+              MaximumHeightRequest="420"
+              HorizontalOptions="Center"
+              VerticalOptions="Center">
+
+            <Button x:Name="btn10"
+                    Grid.Row="0" Grid.Column="0"
+                    Clicked="Button_Clicked" />
+
+            <Button x:Name="btn11"
+                    Grid.Row="0" Grid.Column="1"
+                    Clicked="Button_Clicked" />
+
+            <Button x:Name="btn12"
+                    Grid.Row="0" Grid.Column="2"
+                    Clicked="Button_Clicked" />
+
+            <Button Grid.Row="1" Grid.Column="0"
+                    Clicked="Button_Clicked" />
+
+            <Button Grid.Row="1" Grid.Column="1"
+                    Clicked="Button_Clicked" />
+
+            <Button Grid.Row="1" Grid.Column="2"
+                    Clicked="Button_Clicked" />
+
+            <Button Grid.Row="2" Grid.Column="0"
+                    Clicked="Button_Clicked" />
+
+            <Button Grid.Row="2" Grid.Column="1"
+                    Clicked="Button_Clicked" />
+
+            <Button Grid.Row="2" Grid.Column="2"
+                    Clicked="Button_Clicked" />
+
+        </Grid>
 
     </Grid>
 
